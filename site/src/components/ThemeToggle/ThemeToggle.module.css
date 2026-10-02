@@ -1,0 +1,50 @@
+.toggle {
+  display: inline-grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  transition:
+    color 0.2s,
+    border-color 0.2s;
+}
+
+.toggle:hover {
+  border-color: var(--color-border-strong);
+  color: var(--color-text);
+}
+
+.moon,
+.sun {
+  grid-area: 1 / 1;
+}
+
+/* Light theme shows the moon ("switch to dark"), dark theme shows the sun. */
+.sun {
+  display: none;
+}
+
+:global(:root[data-theme='dark']) .sun {
+  display: block;
+}
+
+:global(:root[data-theme='dark']) .moon {
+  display: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .moon,
+  .sun {
+    animation: spin-in 0.4s var(--ease-out);
+  }
+}
+
+@keyframes spin-in {
+  from {
+    opacity: 0;
+    rotate: -60deg;
+  }
+}
