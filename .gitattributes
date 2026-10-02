@@ -1,0 +1,9 @@
+# Never convert line endings in binary files. Without this, Git can mistake a
+# PDF for text and corrupt it on checkout when core.autocrlf is enabled.
+*.pdf   binary
+*.png   binary
+*.jpg   binary
+*.jfif  binary
+*.webp  binary
+*.ico   binary
+*.woff2 binary

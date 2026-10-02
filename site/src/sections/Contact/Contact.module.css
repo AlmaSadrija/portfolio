@@ -1,0 +1,64 @@
+.email {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.5rem;
+}
+
+.emailLink {
+  font-family: var(--font-display);
+  /* Sized so the address fits on one line down to 320px screens. */
+  font-size: clamp(1.1875rem, 0.5rem + 3.6vw, 2.75rem);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  overflow-wrap: break-word;
+  text-decoration-color: var(--color-border-strong);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.18em;
+  transition: text-decoration-color 0.2s;
+}
+
+.emailLink:hover {
+  text-decoration-color: var(--color-accent);
+}
+
+.channels {
+  display: grid;
+  gap: 0.875rem 2rem;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border);
+}
+
+@media (min-width: 40rem) {
+  .channels {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.channels li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+  color: var(--color-text-muted);
+}
+
+.channels svg {
+  flex: none;
+  color: var(--color-text-subtle);
+}
+
+.channels a {
+  color: var(--color-text);
+  overflow-wrap: anywhere;
+  text-decoration-color: var(--color-border-strong);
+}
+
+.channels a:hover {
+  text-decoration-color: currentColor;
+}
+
+.cv {
+  margin-top: 2.5rem;
+}
